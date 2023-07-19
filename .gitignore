@@ -9,7 +9,11 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-
+babel.config.js
+jest.config.js
+tsconfig.json
+.gitignore
+app.json
 # macOS
 .DS_Store
 

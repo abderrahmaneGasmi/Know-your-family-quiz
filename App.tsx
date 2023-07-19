@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import {
+  ImageSourcePropType,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import { Image } from "expo-image";
+import Home from "./components/Home";
+import Quiz from "./components/Quiz";
+import Result from "./components/Result";
 
 export default function App() {
+  const [start, setStart] = useState({
+    start: false,
+    category: "",
+    score: 0,
+  });
+  const updateScore = (score: number) => {
+    setStart({ ...start, score: score });
+  };
+  const startagain = () => {
+    setStart({ start: false, category: "", score: 0 });
+  };
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      {!start.start ? (
+        <Home setStart={setStart} />
+      ) : start.score == 0 ? (
+        <Quiz updateScore={updateScore} />
+      ) : (
+        <Result res={start.score} startagain={startagain} />
+      )}
+    </>
   );
+  // return <Quiz />;
+  // return <Result res={9} startagain={startagain} />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
