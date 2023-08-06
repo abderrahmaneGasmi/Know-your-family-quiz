@@ -2,8 +2,7 @@
 
 this is an app created using react-native|typescript 
 
-it is game with purpous of detecting family likely you will be if you were in game of thrones world 
-or school house if you are in harry potter world
+it is game with purpose of detecting family likely you will be if you were in game of thrones world or schoolhouse if you are in harry potter world
 
 the game is not completed yet i have just implemeted game of thrones and it works but harry potter still not implemented yet
   ## Getting started
